@@ -1,0 +1,42 @@
+{% extends 'base_generic.html' %}
+
+    {% block content %}
+
+        <div class="property-detail-tile">
+            <h4>Property Detail</h4><br>
+                <h6>Title</h6><small>{{ property.title }}</small><br><br>
+                <h6>Address</h6>
+                    <small>{{ property.address1 }}</small>
+                    <small>{{ property.address2 }}</small>
+                    <small>{{ property.address3 | default_if_none:'' }}</small>
+                    <small>{{ property.city }}</small>
+                    <small>{{ property.postcode | default_if_none:'' }}</small>
+                    <small>{{ property.eircode | default_if_none:'' }}</small>
+                    <small>{{ property.county | default_if_none:'' }}</small>
+                    <small>{{ property.country }}</small><br><br>
+            <div class="row">
+                <div class="col-sm-4">
+                <h6>Key Features</h6>
+                    <small>{{ property.key1 | default_if_none:'' }}</small><br>
+                    <small>{{ property.key2 | default_if_none:'' }}</small><br>
+                    <small>{{ property.key3 | default_if_none:'' }}</small><br>
+                    <small>{{ property.key4 | default_if_none:'' }}</small><br>
+                    <small>{{ property.key5 | default_if_none:'' }}</small><br><br>
+                </div>
+                <div class="col-sm-4">
+                    <h6>Video</h6><br><br>
+                </div>
+                <div class="col-sm-4">
+                    <h6>Mapping</h6><small>{{ property.mapping }}</small><br><br>
+                </div>
+            </div>
+                <h6>Floorplan</h6><small>{{ property.floorplan }}</small><br>
+                <h6>Price</h6><small>{{ property.price }}</small><br>
+                {{ property.created_at }}<br>
+
+            <a href="{% url 'property_update' property.pk %}"><button class="btn btn-primary">Edit</button></a>
+            <a href="{% url 'property_delete' property.pk %}"><button class="btn btn-danger">Delete</button></a>
+            <br><br>
+        </div>
+
+    {% endblock %}

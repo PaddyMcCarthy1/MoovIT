@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h1>Property Delete</h1>
+
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete the following property?</p>
+        <p>{{ object }}</p>
+        <button class="btn btn-danger" type="submit" value="Confirm">Delete</button>
+    </form>
+
+{% endblock %}

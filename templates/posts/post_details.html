@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+
+{% block content %}
+
+    <h4>{{ post.title }}</h4><br>
+    <p>{{ post.content }}</p>
+    <p><small>{{ post.author.first_name }} {{ post.author.last_name }}</small></p>
+    <p><small>{{ post.publish_date }}</small></p>
+
+{% endblock %}

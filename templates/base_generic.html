@@ -1,0 +1,117 @@
+{% load static %}
+<head xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:400|Lato:900|Roboto:500" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!--Header-->
+<div class="header">
+    <div class="row">
+        <div class="col">MOOVIT</div>
+        <div class="col-1">
+            <a href="{% url 'property_list' %}">Property</a>
+        </div>
+        <div class="col-1">
+            <a href="{% url 'post_list' %}">Blog</a>
+        </div>
+        <div class="col-1">
+            <a href="{% url 'post_list' %}">Statistics</a>
+        </div>
+        <div class="col-1">
+            <a href="{% url 'post_list' %}">Trends</a>
+        </div>
+        <div class="col-1">
+            <a href="{% url 'post_list' %}">Tips</a>
+        </div>
+        {% if user.is_anonymous %}
+        <div class="col">
+            <a href="{% url 'account_login' %}?next={{request.path}}">Login</a>
+        </div>
+        {% elif user.is_authenticated %}
+        <div class="col">
+            <a href="{% url 'account_logout' %}?next={{request.path}}">Logout</a>
+        </div>
+        {% endif %}
+    </div>
+</div><br>
+
+
+<!--User Section-->
+<div class="user-section-top">
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col">
+            <small>
+                <i class="far fa-user-circle"></i>
+                {{ request.user.first_name }} {{ request.user.last_name }}
+            </small>
+        </div>
+    </div>
+</div>
+
+<div class="user-section-bottom">
+    <div class="row">
+        <div class="col-8" style="border: transparent"></div>
+        <div class="col-2" style="border: transparent; text-align: right; "><small><i class="far fa-envelope"> </i> Messages</small></div>
+        <div class="col-2" style="border: transparent; text-align: left"><small><i class="far fa-calendar-check"> </i> Viewings</small></div>
+    </div>
+    {% endif %}
+</div>
+
+
+<!--Template Injection-->
+<div class="container" style="border: transparent">
+    <div class="col" style="display: flex; flex-direction: column; justify-content: center">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</div>
+
+
+<!--Footer-->
+ <div class="row" style="border: transparent; position: static; left: 0; bottom: 0; right: 0;width: 102%; height: 20%; background-color: #6FB7E9; color: #FFFFFF">
+
+     <!--div class="col-3" style="border: transparent; text-align: center; display: flex; flex-direction: column; justify-content: center"><small>Cookie Policy</small></div>
+     <div class="col-3" style="border: transparent; text-align: center; display: flex; flex-direction: column; justify-content: center"><small>Terms & Conditions</small></div>
+     <div class="col-3" style="border: transparent; text-align: center; display: flex; flex-direction: column; justify-content: center"><small>Privacy Policy</small></div>
+     <div class="col-3" style="border: transparent; text-align: center; display: flex; flex-direction: column; justify-content: center"><small>Contact Form</small></div>-->
+
+
+     <div class="col" style="text-align: right; display: flex; flex-direction: column; justify-content: center">
+        <p>
+            <small>3 Spencer Dock |</small>
+            <small>IFSC |</small>
+            <small>Dublin 1 |</small>
+            <small>Ireland</small>
+        </p>
+     </div>
+
+     <div class="col" style="text-align: center; display: flex; flex-direction: column; justify-content: center">
+        <p>
+            <small><i class="fab fa-facebook-f"></i></small>
+            <small><i class="fab fa-twitter"></i></small>
+            <small><i class="fab fa-instagram"></i></small>
+            <small><i class="fab fa-linkedIn"></i></small>
+            <small><i class="fab fa-snapchat"></i></small>
+            <small><i class="fab fa-pinterest"></i></small>
+        </p>
+     </div>
+     <div class="col" style="text-align: left; display: flex; flex-direction: column; justify-content: center">
+        <p>
+            <small>Company Registration: 347859</small>
+        </p>
+     </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+/* Font Families */
+h1 {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+p {
+    font-family: 'Roboto';
+}
+label {
+    font-family: Roboto;
+}
+a {
+    font-family: Roboto;
+}
+i {
+    padding-right: 5px;
+}
+
+
+/* Header */
+.header .row {
+    border: transparent;
+    height: auto;
+    background-color: #FFFFFF;
+    color: #3C8DC5;
+}
+.header .col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Lato';
+    font-size: xx-large
+}
+.header .col-1 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Lato';
+    font-size: small;
+}
+.header .row a {
+    text-decoration: none;
+    color: #3C8DC5;
+    font-size: small;
+}
+
+
+/* User Section */
+.user-section-top .row {
+    padding-top: .5em;
+    border: transparent;
+    height: auto;
+    background-color: #6FB7E9;
+    color: #FFFFFF;
+    font-family:'Chivo'
+}
+.user-section-top .row .col {
+    border: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family:'Chivo';
+}
+.user-section-bottom .row {
+    border: transparent;
+    height: auto;
+    background-color: #6FB7E9;
+    color: #FFFFFF;
+    font-family:'Chivo';
+    padding-bottom: .5em;
+    margin-bottom: 3em;
+}
+
+
+/* Buttons */
+.card-footer .btn {
+  text-transform: uppercase;
+  padding: 3px;
+  font-weight:bolder;
+  border-radius:20px;
+  transition:background .5s linear;
+}
+.card-footer .btn:hover {
+  .transition;
+}
+.card-footer .btn-info {
+  background-color: transparent;
+  color: #B2D1E5;
+  border-width: 1px;
+  border-color: #B2D1E5;
+  padding-left:10px;
+  padding-right:10px;
+  font-family: 'Chivo';
+  font-size: small;
+}
+.card-footer .btn-info:hover {
+  color:#fff;
+  background-color:#B2D1E5;
+  border-color: none;
+}
+.card-footer a i::before {
+    color: #B2D1E5;
+}
+.card-footer .btn-info i:hover {
+    color: #FFFFFF;
+}
+
+
+/* Property List */
+.property-list-tile h4 {
+    font-family: 'Lato', sans-serif;
+}
+.property-list-tile p {
+    font-family: Roboto, sans-serif;
+}
+.property-list-tile i {
+    content: "\f06e";
+    color: #25020F;
+}
+.card:hover {
+    background: linear-gradient(to right, #1fa2ff17 0%, #12d8fa2b 51%, #1fa2ff36 100%);
+}
+.card .card-header {
+    background-color: #ffffff;
+    border: transparent;
+}
+.card-header h4 {
+    color: #ffffff;
+}
+.card-header .badge {
+    background-color: #2196F3;
+}
+.card .card-body {
+    background-color: #E9F2F9;
+}
+.card .card-footer {
+    background-color: #ffffff;
+}
+
+
+
+
+
